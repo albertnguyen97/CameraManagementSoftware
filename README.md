@@ -17,3 +17,5 @@ QVBoxLayout
 QHBoxLayout
 QComboBox
 QCheckBox
+QTreeWidget
+QTreeWidgetItem
