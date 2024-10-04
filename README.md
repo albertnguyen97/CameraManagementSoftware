@@ -19,3 +19,8 @@ QComboBox
 QCheckBox
 QTreeWidget
 QTreeWidgetItem
+
+Day2:
+<h2> Test Ui and Logic </h2>
+QTabBar Top and Left
+Search line edit + QComboBox QTreeWidget
