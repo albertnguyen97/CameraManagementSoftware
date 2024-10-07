@@ -19,8 +19,11 @@ QComboBox
 QCheckBox
 QTreeWidget
 QTreeWidgetItem
-
+<br>
 Day2:
 <h2> Test Ui and Logic </h2>
 QTabBar Top and Left
 Search line edit + QComboBox QTreeWidget
+<br>
+Day3:
+<h2> Add camera </h2>
