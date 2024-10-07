@@ -1,7 +1,7 @@
 # CameraManagementSoftware
 demo app
 
-Day1:
+<h3> Day1: </h3> 
 <h2>Read document</h2>
 QApplication
 QMainWindow
@@ -20,10 +20,10 @@ QCheckBox
 QTreeWidget
 QTreeWidgetItem
 <br>
-Day2:
+<h3> Day2: </h3>
 <h2> Test Ui and Logic </h2>
 QTabBar Top and Left
 Search line edit + QComboBox QTreeWidget
 <br>
-Day3:
+<h3> Day3: </h3>
 <h2> Add camera </h2>
