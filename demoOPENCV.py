@@ -37,7 +37,7 @@ class VideoCaptureApp(QMainWindow):
         self.cap = None
 
     def start_stream(self):
-        self.cap = cv2.VideoCapture("rtsp://admin:abcd1234@192.168.1.84/cam/realmonitor?channel=2&subtype=0&unicast=true&proto=Onvif")
+        self.cap = cv2.VideoCapture("mrl here")
         if not self.cap.isOpened():
             print("Không thể mở video stream")
             return
