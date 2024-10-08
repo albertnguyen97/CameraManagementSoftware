@@ -6,8 +6,9 @@ class VideoPlayer(QtWidgets.QWidget):
     def __init__(self, rtsp_url):
         super().__init__()
 
+        # Thiết lập kích thước và tên của widget
         self.setWindowTitle("VLC Video Player")
-        self.setGeometry(100, 100, 800, 600)
+        self.setMinimumSize(400, 300)  # Kích thước cho từng khung video
 
         # Tạo trình phát VLC
         self.vlc_instance = vlc.Instance()
@@ -16,30 +17,74 @@ class VideoPlayer(QtWidgets.QWidget):
         # Tạo layout
         self.container = QtWidgets.QVBoxLayout(self)
 
-        # Tạo nút phát video
-        self.play_button = QtWidgets.QPushButton("Play Video")
-        self.play_button.clicked.connect(self.play_video)
-        self.container.addWidget(self.play_button)
-
         # Khung chứa video
         self.video_frame = QtWidgets.QFrame(self)
         self.container.addWidget(self.video_frame)
 
-        # Thiết lập kích thước cho khung chứa video
-        self.video_frame.setMinimumSize(800, 600)
+        # Thiết lập khung chứa video
+        self.video_frame.setMinimumSize(400, 300)
         self.media_player.set_hwnd(self.video_frame.winId())  # Chỉ định khung cho VLC
 
         self.rtsp_url = rtsp_url
 
     def play_video(self):
-        # Mở video từ nguồn RTSP
-        media = self.vlc_instance.media_new(self.rtsp_url)
+        # Mở video từ nguồn RTSP với tùy chọn 'rtsp-tcp'
+        self.vlc_instance = vlc.Instance("--avcodec-hw=any")  # Kích hoạt tăng tốc phần cứng
+        media = self.vlc_instance.media_new(self.rtsp_url, ":rtsp-tcp")  # Thêm tùy chọn ':rtsp-tcp'
         self.media_player.set_media(media)
         self.media_player.play()
 
+class MainWindow(QtWidgets.QWidget):
+    def __init__(self, rtsp_urls):
+        super().__init__()
+
+        self.setWindowTitle("20 Camera Grid")
+        self.setGeometry(100, 100, 1600, 1200)  # Tăng kích thước cửa sổ để phù hợp với nhiều camera hơn
+
+        # Tạo GridLayout cho 20 camera
+        self.grid_layout = QtWidgets.QGridLayout(self)        # Tạo các VideoPlayer cho từng camera
+        self.video_players = []
+        for idx, url in enumerate(rtsp_urls):
+            player = VideoPlayer(url)
+            self.video_players.append(player)
+
+            # Thêm mỗi camera vào trong grid (4x5 lưới)
+            row, col = divmod(idx, 5)
+            self.grid_layout.addWidget(player, row, col)
+
+        # Phát video từ các camera
+        for player in self.video_players:
+            player.play_video()
+
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
-    rtsp_url = "RTSP here"  # Thay thế bằng URL RTSP của bạn
-    player = VideoPlayer(rtsp_url)
-    player.show()
+
+    # Danh sách 20 URL RTSP từ các camera
+    rtsp_urls = [
+        "rtsp://admin:abcd1234@14.241.65.109:554/",
+        "rtsp://admin:abcd1234@14.241.65.109:554/",
+        "rtsp://admin:abcd1234@14.241.65.109:554/",
+        "rtsp://admin:abcd1234@14.241.65.109:554/",
+        "rtsp://admin:abcd1234@14.241.65.109:554/",
+        "rtsp://admin:abcd1234@14.241.65.109:554/",
+        "rtsp://admin:abcd1234@14.241.65.109:554/",
+        "rtsp://admin:abcd1234@14.241.65.109:554/",
+        "rtsp://admin:abcd1234@14.241.65.109:554/",
+        "rtsp://admin:abcd1234@14.241.65.109:554/",
+        "rtsp://admin:abcd1234@14.241.65.109:554/",
+        "rtsp://admin:abcd1234@14.241.65.109:554/",
+        "rtsp://admin:abcd1234@14.241.65.109:554/",
+        "rtsp://admin:abcd1234@14.241.65.109:554/",
+        "rtsp://admin:abcd1234@14.241.65.109:554/",
+        "rtsp://admin:abcd1234@14.241.65.109:554/",
+        "rtsp://admin:abcd1234@14.241.65.109:554/",
+        "rtsp://admin:abcd1234@14.241.65.109:554/",
+        "rtsp://admin:abcd1234@14.241.65.109:554/",
+        "rtsp://admin:abcd1234@14.241.65.109:554/"
+    ]
+
+    # Tạo cửa sổ chính
+    window = MainWindow(rtsp_urls)
+    window.show()
+
     sys.exit(app.exec())
