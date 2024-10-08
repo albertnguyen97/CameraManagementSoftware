@@ -27,3 +27,5 @@ Search line edit + QComboBox QTreeWidget
 <br>
 <h3> Day3: </h3>
 <h2> Add camera </h2>
+<h3> Day4: </h3>
+<h2> Test Camera 3 types </h2>
