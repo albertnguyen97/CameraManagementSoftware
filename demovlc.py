@@ -61,26 +61,7 @@ if __name__ == "__main__":
 
     # Danh sách 20 URL RTSP từ các camera
     rtsp_urls = [
-        "rtsp://admin:abcd1234@14.241.65.109:554/",
-        "rtsp://admin:abcd1234@14.241.65.109:554/",
-        "rtsp://admin:abcd1234@14.241.65.109:554/",
-        "rtsp://admin:abcd1234@14.241.65.109:554/",
-        "rtsp://admin:abcd1234@14.241.65.109:554/",
-        "rtsp://admin:abcd1234@14.241.65.109:554/",
-        "rtsp://admin:abcd1234@14.241.65.109:554/",
-        "rtsp://admin:abcd1234@14.241.65.109:554/",
-        "rtsp://admin:abcd1234@14.241.65.109:554/",
-        "rtsp://admin:abcd1234@14.241.65.109:554/",
-        "rtsp://admin:abcd1234@14.241.65.109:554/",
-        "rtsp://admin:abcd1234@14.241.65.109:554/",
-        "rtsp://admin:abcd1234@14.241.65.109:554/",
-        "rtsp://admin:abcd1234@14.241.65.109:554/",
-        "rtsp://admin:abcd1234@14.241.65.109:554/",
-        "rtsp://admin:abcd1234@14.241.65.109:554/",
-        "rtsp://admin:abcd1234@14.241.65.109:554/",
-        "rtsp://admin:abcd1234@14.241.65.109:554/",
-        "rtsp://admin:abcd1234@14.241.65.109:554/",
-        "rtsp://admin:abcd1234@14.241.65.109:554/"
+        "RTSP here"
     ]
 
     # Tạo cửa sổ chính
