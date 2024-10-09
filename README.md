@@ -27,9 +27,11 @@ Search line edit + QComboBox QTreeWidget
 <br>
 <h3> Day3: </h3>
 <h2> Add camera </h2>
+da lam voi AV, VLC
+loi khi chay VLC tren ubuntu, failed session khi ket noi voi rtsp bang code
 <h3> Day4: </h3>
 <h2> Test Camera 3 types </h2>
-
+da lam them voi QMediaPlayer, OpenCV
 <h3> Day5: </h3>
 <h2> Test Camera 3 types, explore docs av and thread </h2>
 mux, demux, frame.pts, parse, threading
