@@ -31,4 +31,5 @@ Search line edit + QComboBox QTreeWidget
 <h2> Test Camera 3 types </h2>
 
 <h3> Day5: </h3>
-<h2> Test Camera 3 types and QThread </h2>
+<h2> Test Camera 3 types, explore docs av and thread </h2>
+mux, demux, frame.pts, parse, threading
