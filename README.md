@@ -35,3 +35,7 @@ da lam them voi QMediaPlayer, OpenCV
 <h3> Day5: </h3>
 <h2> Test Camera 3 types, explore docs av and thread </h2>
 mux, demux, frame.pts, parse, threading
+<h3> Day6: </h3>
+<h2> pair programing, rebuild stream screen </h2>
+<h3> Day7: </h3>
+<h2>Logic stream screen, drag drop, link rtsp, group in treeview</h2>
